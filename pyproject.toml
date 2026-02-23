@@ -4,7 +4,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "ghostscript-bin"
-version = "1.0.0"
+version = "1.1.0"
 description = "Ghostscript (gs) binary distribution"
 readme = "README.md"
 requires-python = ">=3.9"
