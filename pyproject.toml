@@ -31,7 +31,7 @@ skip = "*-musllinux*"
 test-command = "gs --version && python -c \"import ghostscript_bin; print(ghostscript_bin.version())\""
 
 [tool.cibuildwheel.linux]
-before-all = "yum install -y autoconf automake libtool || apt-get update && apt-get install -y autoconf automake libtool"
+before-all = "yum install -y autoconf automake libtool"
 
 [tool.cibuildwheel.macos]
 before-all = "brew install automake"
