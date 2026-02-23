@@ -6,6 +6,7 @@ build-backend = "scikit_build_core.build"
 name = "ghostscript-bin"
 version = "1.0.0"
 description = "Ghostscript (gs) binary distribution"
+readme = "README.md"
 requires-python = ">=3.9"
 license = "AGPL-3.0-or-later"
 
