@@ -27,7 +27,7 @@ build_command = ""
 
 [tool.cibuildwheel]
 archs = ["auto64"]
-build = ["cp313-*"]
+build = ["cp313-*", "cp314-*"]
 skip = "*-musllinux*"
 test-command = "gs --version && python -c \"import ghostscript_bin; print(ghostscript_bin.version())\""
 
