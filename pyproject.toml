@@ -1,0 +1,37 @@
+[build-system]
+requires = ["scikit-build-core"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "ghostscript-bin"
+version = "10.7.0"
+description = "Ghostscript (gs) binary distribution"
+requires-python = ">=3.9"
+license = "AGPL-3.0-or-later"
+
+[project.scripts]
+gs = "ghostscript_bin:_main"
+
+[project.urls]
+Homepage = "https://github.com/elohmeier/ghostscript-bin"
+Repository = "https://github.com/elohmeier/ghostscript-bin"
+
+[tool.scikit-build]
+wheel.py-api = ""
+wheel.packages = ["src/ghostscript_bin"]
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+build_command = ""
+
+[tool.cibuildwheel]
+archs = ["auto64"]
+build = ["cp313-*"]
+skip = "*-musllinux*"
+test-command = "gs --version && python -c \"import ghostscript_bin; print(ghostscript_bin.version())\""
+
+[tool.cibuildwheel.linux]
+before-all = "yum install -y autoconf automake libtool || apt-get update && apt-get install -y autoconf automake libtool"
+
+[tool.cibuildwheel.macos]
+before-all = "brew install automake"

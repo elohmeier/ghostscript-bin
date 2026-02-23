@@ -1,0 +1,3 @@
+[submodule "extern/ghostscript"]
+	path = extern/ghostscript
+	url = https://github.com/ArtifexSoftware/ghostpdl.git
